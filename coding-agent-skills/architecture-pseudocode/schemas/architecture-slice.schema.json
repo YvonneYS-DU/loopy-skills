@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArchitectureSlice",
+  "type": "object",
+  "required": [
+    "id",
+    "task_id",
+    "status",
+    "scope",
+    "flow",
+    "branches",
+    "state_changes",
+    "stable_interfaces",
+    "runtime_boundaries",
+    "error_propagation",
+    "affected_paths",
+    "evidence",
+    "consistency_check",
+    "change_planning_notes"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "partially_verified"
+      ]
+    },
+    "scope": {
+      "type": "object"
+    },
+    "flow": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "branches": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "state_changes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "stable_interfaces": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "runtime_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "error_propagation": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "affected_paths": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence": {
+      "type": "object"
+    },
+    "consistency_check": {
+      "type": "object"
+    },
+    "change_planning_notes": {
+      "type": "object"
+    }
+  }
+}

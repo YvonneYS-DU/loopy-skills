@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RequirementContract",
+  "type": "object",
+  "required": [
+    "task_id",
+    "task_summary",
+    "user_goal",
+    "explicit_requirements",
+    "inherited_constraints",
+    "safe_inferences",
+    "prohibited_defaults",
+    "affected_boundaries",
+    "acceptance_criteria",
+    "unresolved_decisions",
+    "gate"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "task_summary": {
+      "type": "string"
+    },
+    "user_goal": {
+      "type": "object",
+      "required": [
+        "primary",
+        "secondary"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "explicit_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "inherited_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "safe_inferences": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "prohibited_defaults": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "affected_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unresolved_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "gate": {
+      "type": "object",
+      "required": [
+        "decision",
+        "reason"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "PROCEED",
+            "CONFIRM",
+            "REPLAN",
+            "STOP"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
